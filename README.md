@@ -30,7 +30,7 @@ This is my first web application built using Vaadin and Java Spring Boot. I buil
 ```java
   // Returns a text box with placeholder text and Instructions for User around the text box
   public TextField createText()
-  // Returns a button that is styled and contains an listener to call printAnimal() if Enter pressed
+  // Returns a button that is styled and contains a listener to call printAnimal() if Enter pressed
   public Button createButton()
   // Returns a vertical layout containing image component. Uses 'request' parameter to choose animal art image.
   public VerticalLayout printAnimal(String request)
@@ -39,14 +39,14 @@ This is my first web application built using Vaadin and Java Spring Boot. I buil
 
 ## Summary
 
-When main() runs, the `@Route("")` in `MainView.java` defines the MainView class as the default route target. This means that the MainView component is the default page displayed. Similar to a Home page when you visit a website. 
+When main() runs, the `@Route("")` in `MainView.java` defines the MainView class as the default route target. This means that the MainView component is the default page displayed. Similar to how the Home page of a website is displayed first. 
 <p>
 The class' public constructor will then separate the webpage into two sections using two Vertical Layouts. 
   <ul>
     <li>The first section contains: Instructions, Text box, Helper Text, and Submit Button.</li>
     <li>The second section is initially empty and will be filled with an image once the user provides a valid animal name (via text box).</li>
   </ul>  
-  The text box uses a regex expression to ensure entered characters are alphabets only. Once the user clicks the submit button or presses the key, the Button's listener is triggered and calls the printAnimal() method. Finally, printAnimal() replaces the second section of the webpage with the new animal image. It uses StreamResource's getResourceAsStream() to retrieve the image via file path. Now you can see the animal built from ASCII characters!
+  The text box uses a regex expression to ensure entered characters are alphabets only. Once the user clicks the Submit button or presses the Enter key, the Button's listener is triggered and calls the printAnimal() method. Finally, printAnimal() replaces the second section of the webpage with the new animal image. It uses StreamResource's getResourceAsStream() to retrieve the image via file path. Now you can see the animal built from ASCII characters!
 </p>
 
 DemoApplication's main() -> MainView() public constructor -> User types text -> User presses Enter key or hit Submit Button -> Submit Button's Listener is triggered and calls PrintAnimal() -> PrintAnimal() uses switch case to return appropriate image -> Button() receives returned image and replaces second section of webpage with returned image
@@ -64,7 +64,7 @@ Image Added after Submit Button's Listener triggered by Enter key or Button Clic
 ![Screenshot 2024-07-05 101322](https://github.com/RedShadow30/ASCII-Animal-Art/assets/148815559/0912f243-8cb1-4a4e-add4-f56c8927d4bc)
 
 ### Incorrect input
-If input text cannot be matched with any of cases in switch-case then default image displayed is red X.
+If input text is not one of the animals from the options provided then default image displayed is red X.
 ![Screenshot 2024-07-05 101359](https://github.com/RedShadow30/ASCII-Animal-Art/assets/148815559/ffad379c-d5d1-4706-b876-e519f70464c0)
 
 
